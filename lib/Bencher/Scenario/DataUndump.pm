@@ -22,6 +22,11 @@ our $scenario = {
     ],
     datasets => [
         {
+            name => 'array100i',
+            args => {dump=> Data::Dumper->new([[1..100]])->Terse(1)->Dump },
+            result => [1..100],
+        },
+        {
             name => 'array1000i',
             args => {dump=> Data::Dumper->new([[1..1000]])->Terse(1)->Dump },
             result => [1..1000],
