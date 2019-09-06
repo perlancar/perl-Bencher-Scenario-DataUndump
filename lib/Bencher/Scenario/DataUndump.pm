@@ -36,3 +36,7 @@ our $scenario = {
 
 1;
 # ABSTRACT:
+
+=head1 SEE ALSO
+
+L<https://www.reddit.com/r/perl/comments/czhwe6/syntax_differences_from_data_dumper_to_json/ez95r7c?utm_source=share&utm_medium=web2x>
