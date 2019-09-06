@@ -9,6 +9,20 @@ use warnings;
 
 use Data::Dumper;
 
+my $array10mixed = [
+    undef,
+    1,
+    1.1,
+    "",
+    "string",
+
+    "string with some control characters: \n, \b",
+    [],
+    [1,2,3],
+    {},
+    {a=>1,b=>2,c=>3},
+];
+
 our $scenario = {
     summary => 'Benchmark Data::Undump against eval() for loading a Data::Dumper output',
     participants => [
@@ -23,13 +37,21 @@ our $scenario = {
     datasets => [
         {
             name => 'array100i',
+            summary => 'Array of 100 integers',
             args => {dump=> Data::Dumper->new([[1..100]])->Terse(1)->Dump },
             result => [1..100],
         },
         {
             name => 'array1000i',
+            summary => 'Array of 1000 integers',
             args => {dump=> Data::Dumper->new([[1..1000]])->Terse(1)->Dump },
             result => [1..1000],
+        },
+        {
+            name => 'array10mixed',
+            summary => 'A 10-element array containing a mix of various Perl data items',
+            args => {dump=> Data::Dumper->new([$array10mixed])->Terse(1)->Dump },
+            result => $array10mixed,
         },
     ],
 };
