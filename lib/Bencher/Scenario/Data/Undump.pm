@@ -1,13 +1,15 @@
-package Bencher::Scenario::DataUndump;
-
-# DATE
-# VERSION
+package Bencher::Scenario::Data::Undump;
 
 use 5.010001;
 use strict;
 use warnings;
 
 use Data::Dumper;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 my $array10mixed = [
     undef,
